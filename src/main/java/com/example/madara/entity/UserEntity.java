@@ -36,6 +36,9 @@ public class UserEntity {
     @Column(columnDefinition = "ENUM('ACTIF','INACTIF') DEFAULT 'ACTIF'")
     private Status status = Status.ACTIF;
 
+    @Column(name="created_at", nullable = false, updatable = false)
+    private java.time.LocalDateTime createdAt = java.time.LocalDateTime.now();
+
     public UserEntity() {}
 
     public UserEntity(String nomUsers, String prenomUsers, String emailUsers, String telephoneUsers, String passwordUsers, String roleUsers,Status status) {
